@@ -2,7 +2,6 @@
 
 *{
     box-sizing: border-box;
-    /* outline: 1px solid red; */
 }
 
 body {
@@ -29,12 +28,23 @@ body {
     width: 40vw;
     border: 1px solid white;
     transition: 3s ease;
+    position: relative;
 }
 
 img{
+    position: absolute;
+    inset: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: .4s ease;
+    transition-delay: 200ms;
+}
+
+img.active{
+    opacity: 1;
+    transition-delay: 0ms;
 }
 
 button{
@@ -54,5 +64,9 @@ button{
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 1s ease;
+}
+
+.dot.current{
+    background-color: black;
+    transition: background-color .4s ease;
 }
